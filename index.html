@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+</head>
+<style>
+    body{
+    background-color: #eee8ef;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(135, 167, 223, 0.921);
+}
+input:focus{
+    box-shadow: 0 0 10px rgba(158, 188, 239, 0.921);
+    transition: all 0.3s ease-in-out;
+}
+button{display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #8f43cd;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #6f43cd;
+    transition: all 0.3s ease-in-out;
+}
+h2{font-style: italic;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.SF{display:inline;
+    
+    align-items: center;
+}
+p1{font-size: 16px;
+    color: #6b6b6b;
+}
+.percentage{color: #b02f2f;
+   
+}
+h2{font-style: italic;
+    font-weight: bolder;
+    font-size: 40px;
+  display: flex;
+    justify-content:space-between;
+}
+section{display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+footer{margin-top: 20px;
+    text-align: center;
+    font-style:initial ;
+
+}
+a{color: #8f43cd;
+    text-decoration: none;
+}
+
+
+</style>
+<body>
+    <div class="container">
+    <header>
+        <img src="https://www.shecodes.io/assets/branding/logo-shecodes-3dfa60aeab8ef361842da5a2b6d46db3af1b7afafefee3dde0a9846389de754b.png" width="200"
+            alt="SheCodes.io" />
+    </header>
+    
+    <main>
+        <span>
+            <form>
+                <div class="weather">
+                    <input type="city" id="city" required autofocus />
+                    <input type="submit" value="Search" />
+                </div>
+            </form>
+        </span>
+        <div id="weather-info">
+            <h2> San Fransisco  <img class="SF" src="download.png" alt="weather-icon" />18°C</h2>
+            <p1>Sunday:<span id="percentage">10:00</span>,Broken Clouds</p1><br/>
+              Humidity: <span id="percentage">89%</span>
+              ,Wind:<span id="percentage">4.12km/h</span>
+            <hr>  
+        </div>
+        <section>
+            <div class="day0">
+                <h3>Sun</h3>
+                <img src="sun.png" alt="weather-icon" /><br />
+                <p1>19°C</p1><span>15°C</span>
+            </div>
+            <div class="day1">
+                <h3>Mon</h3>
+                <img src="mon.png" alt="weather-icon" /><br />
+                <p1>19°C</p1><span>15°C</span>
+            </div>
+            <div class="day2">
+                <h3>Tue</h3>
+                <img src="download.png" alt="weather-icon" /><br/>
+                <p1>18°C</p1><span>15°C</span>
+            </div>
+            <div class="day3">
+                <h3>Wed</h3>
+                <img src="wed.png" alt="weather-icon" /><br />
+                <p1>16°C</p1><span>14°C</span>
+            </div>
+            <div class="day4">
+                <h3>Thu</h3>
+                <img src="thu.png" alt="weather-icon" /><br />
+                <p1>18°C</p1><span>14°C</span>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <footer>
+        <p><em>This project is coded by <a href="https://www.shecodes.io/graduates/124948-aastha-sharma">Aastha Sharma</a></em></p>
+        <p><em>and is <a href="https://github.com/sharmaastha15">open sourced on Github</a></em></p>
+    </footer>
+    </div>
+    <script>
+            const weatherData = {
+                'London': { description: 'light rain', temp: 15 },
+                'New York': { description: 'clear sky', temp: 22 },
+                'Tokyo': { description: 'scattered clouds', temp: 18 }
+            };
+
+            function getWeatherWithoutAPI(city) {
+                const data = weatherData[city];
+                if (data) {
+                    console.log(`Weather in ${city}: ${data.description}, Temperature: ${data.temp}°C`);
+                } else {
+                    console.error('City not found');
+                }
+            }
+
+    </script>
+</body>
+</html>
